@@ -1,0 +1,122 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require bootstrap_and_overrides
+ */
+
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+#contents {
+  margin: 20px;
+}
+
+.app-nav {
+  position: relative;
+  width: 100%;
+  > .app-nav-inner { // ul
+    height: 46px;
+    list-style: none;
+    margin: 0;
+    padding: 0 10px;
+    > li {
+      position: relative;
+      display: inline-block;
+      vertical-align: middle;
+      margin: 5px 0;
+      float: left;
+      > a {
+        position: relative;
+        display: block;
+        color: #AAA;
+        padding: 7px 14px;
+      }
+      > a:hover {
+        color: #FFF;
+      }
+      .nav-icon {
+        font-size: 25px;
+      }
+    }
+    .dropdown > a {
+      padding: 0 !important;
+    }
+  }
+}
+
+#flashs {
+  margin-right: 100px;
+}
+
+#streams {
+  list-style: none;
+  padding: 0;
+}
+
+.thumb-mini {
+  width: 35px;
+}
+
+.inline-icon {
+  background-size: cover;
+  vertical-align: middle;
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+}
+
+.dropdown-button {
+  height: 0;
+}
+
+.twitter-signin {
+  color: white !important;
+  background: #55acee !important;
+}
+
+a.slow {
+  transition: all .15s ease-in-out;
+}
+a:hover, a:focus, a span {
+  text-decoration: none !important;
+}
+.account_icon.thumb-mini {
+  font-size: 30px;
+  width: 30px;
+}
+
+.icons {
+  .account_icon.thumb {
+    width: 50px;
+    float: left;
+  }
+  span.account_icon.thumb {
+    display: block;
+    padding-top: 5px;
+    font-size: 34px;
+    width: 50px;
+    height: 50px;
+    border: 1px solid #ccc;
+  }
+}
+
+// bootstrap overwrite
+.container-fluid {
+  margin: 0;
+  padding: 0;
+}
+.dropdown-menu > li > span {
+  display: block;
+  padding: 3px 20px;
+}

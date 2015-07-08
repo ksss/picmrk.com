@@ -1,0 +1,4 @@
+$('.photos').append('<%= escape_javascript render(@photos) %>');
+$("#paginator").html(
+  "<%= escape_javascript(link_to_next_page(@photos, 'next', remote: true)) %>"
+);

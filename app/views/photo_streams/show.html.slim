@@ -1,0 +1,19 @@
+#photo
+  .photo_stream-link
+    - prev_photo = @photo_stream.prev_photo
+    - if prev_photo
+      = link_to '', photo_stream_path(@stream.key, prev_photo.key), class: 'photo_stream-link-prev'
+    - next_photo = @photo_stream.next_photo
+    - if next_photo
+      = link_to '', photo_stream_path(@stream.key, next_photo.key), class: 'photo_stream-link-next'
+  = image_tag proxy_url(@photo.image, :resize, "1000x1000"), class: "full_photo"
+
+- if @photo.owner?
+  .photo_streams
+    - if current_account
+      - current_account.streams.each do |stream|
+        = content_tag :div, class: "js-s#{stream.id}-p#{@photo.id}"
+          == render 'photos/stream', photo: @photo, stream: stream
+  pre= @photo.meta_tag
+  = link_to 'Original download', download_photo_path(@photo.key), class: 'btn btn-success btn-lg btn-block'
+  = button_to 'Delete this photo', photo_path(@photo.key), class: 'btn btn-danger btn-lg btn-block', method: :delete, data: {confirm: 'delete photo?'}

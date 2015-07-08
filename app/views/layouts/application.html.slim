@@ -1,0 +1,54 @@
+doctype html
+html
+  head
+    title picmark
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=0.3,maximum-scale=3.0,user-scalable=yes"
+    = csrf_meta_tags
+
+  body
+    div.app-nav
+      ul.navbar-inverse.app-nav-inner
+        - if signed_in?
+          li role="presentation"
+            = link_to streams_path, class: 'slow'
+              == fa(:cloud, class: 'nav-icon')
+              | Stream
+          li role="presentation"
+            = link_to new_photos_path, class: 'slow'
+              == fa('cloud-upload', class: 'nav-icon')
+              | Post
+          li.dropdown.pull-right
+            a.dropdown-toggle data-toggle="dropdown" type="button" aria-haspopup="true" aria-expanded="false"
+              = icon(current_account, version: :thumb, class: 'thumb-mini img-rounded')
+            ul.dropdown-menu role="menu"
+              li
+                span.help-block
+                  = current_account.name
+              li
+                = link_to 'Edit', edit_account_path
+              li
+                = link_to 'Sign out', signout_path
+        - else
+          li role="presentation"
+            = link_to root_path
+              strong
+                | Stream
+
+    div.container-fluid
+      div#contents
+        div#flashs
+          - if flash[:notice]
+            .flash.alert.alert-success.alert-dismissible.fade.in role="alert"
+              = flash[:notice]
+              button type="button" class="close" data-dismiss="alert" aria-label="Close"
+                span aria-hidden="true" ×
+
+          - if flash[:alert]
+            .flash.alert.alert-danger.alert-dismissible.fade.in role="alert"
+              = flash[:alert]
+              button type="button" class="close" data-dismiss="alert" aria-label="Close"
+                span aria-hidden="true" ×
+
+        == yield

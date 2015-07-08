@@ -1,0 +1,13 @@
+#photo
+  = image_tag proxy_url(@photo.image, :resize, "1000x1000"), class: "full_photo"
+
+.photo_streams
+  - if current_account
+    - current_account.streams.each do |stream|
+      = content_tag :div, class: "js-s#{stream.id}-p#{@photo.id}"
+        == render 'stream', photo: @photo, stream: stream
+
+- if @photo.owner?
+  pre= @photo.meta_tag
+  = link_to 'Original download', download_photo_path(@photo.key), class: 'btn btn-success btn-lg btn-block'
+  = button_to 'Delete this photo', photo_path(@photo.key), class: 'btn btn-danger btn-lg btn-block', method: :delete, data: {confirm: 'delete photo file?'}

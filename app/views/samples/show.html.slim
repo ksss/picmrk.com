@@ -1,0 +1,9 @@
+p#notice = notice
+
+p
+  strong Sname:
+  = @sample.sname
+
+= link_to 'Edit', edit_sample_path(@sample)
+'|
+= link_to 'Back', samples_path

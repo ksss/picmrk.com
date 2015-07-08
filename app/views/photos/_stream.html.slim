@@ -1,0 +1,9 @@
+= form_tag photo_stream_path(stream.key, photo.key), remote: true do |f|
+  - if photo.streams.include? stream
+    = hidden_field_tag "_method", "delete"
+    button.btn.btn-primary
+      == fa(:ok)
+      = stream.title
+  - else
+    button.btn.btn-default
+      = stream.title

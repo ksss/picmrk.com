@@ -1,0 +1,211 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+en:
+  views:
+    imagine:
+      filename: filename
+      size: Size
+      shot_at: Shot at
+      width: Width
+      height: Height
+      bits: Bits
+      comment: Comment
+      aperture_value: Aperture value
+      artist: Artist
+      bad_fax_lines: Bad fax lines
+      bits_per_sample: Bits per sample
+      brightness_value: Brightness value
+      cell_length: Cell length
+      cell_width: Cell width
+      cfa_pattern: Cfa pattern
+      clean_fax_data: Clean fax data
+      clip_path: Clip path
+      coding_methods: Coding methods
+      color_map: Color map
+      color_space: Color space
+      components_configuration: Components configuration
+      compressed_bits_per_pixel: Compressed bits per pixel
+      compression: Compression
+      consecutive_bad_fax_lines: Consecutive bad fax lines
+      contrast: Contrast
+      copyright: Copyright
+      custom_rendered: Custom rendered
+      date_time: Date time
+      date_time_digitized: Date time digitized
+      date_time_original: Date time original
+      decode: Decode
+      default_image_color: Default image color
+      device_setting_description: Device setting description
+      digital_zoom_ratio: Digital zoom ratio
+      document_name: Document name
+      dot_range: Dot range
+      exif_version: Exif version
+      exposure_bias_value: Exposure bias value
+      exposure_index: Exposure index
+      exposure_mode: Exposure mode
+      exposure_program: Exposure program
+      exposure_time: Exposure time
+      extra_samples: Extra samples
+      f_number: F number
+      fax_profile: Fax profile
+      file_source: File source
+      fill_order: Fill order
+      flash: Flash
+      flash_energy: Flash energy
+      flashpix_version: Flashpix version
+      focal_length: Focal length
+      focal_length_in_35mm_film: Focal length in 35mm film
+      focal_plane_resolution_unit: Focal plane resolution unit
+      focal_plane_x_resolution: Focal plane x resolution
+      focal_plane_y_resolution: Focal plane y resolution
+      free_byte_counts: Free byte counts
+      free_offsets: Free offsets
+      gain_control: Gain control
+      global_parameters_ifd: Global parameters ifd
+      gps_altitude: Gps altitude
+      gps_altitude_ref: Gps altitude ref
+      gps_area_information: Gps area information
+      gps_date_stamp: Gps date stamp
+      gps_dest_bearing: Gps dest bearing
+      gps_dest_bearing_ref: Gps dest bearing ref
+      gps_dest_distance: Gps dest distance
+      gps_dest_distance_ref: Gps dest distance ref
+      gps_dest_latitude: Gps dest latitude
+      gps_dest_latitude_ref: Gps dest latitude ref
+      gps_dest_longitude: Gps dest longitude
+      gps_dest_longitude_ref: Gps dest longitude ref
+      gps_differential: Gps differential
+      gps_dop: Gps dop
+      gps_img_direction: Gps img direction
+      gps_img_direction_ref: Gps img direction ref
+      gps_latitude: Gps latitude
+      gps_latitude_ref: Gps latitude ref
+      gps_longitude: Gps longitude
+      gps_longitude_ref: Gps longitude ref
+      gps_map_datum: Gps map datum
+      gps_measure_mode: Gps measure mode
+      gps_processing_method: Gps processing method
+      gps_satellites: Gps satellites
+      gps_speed: Gps speed
+      gps_speed_ref: Gps speed ref
+      gps_status: Gps status
+      gps_time_stamp: Gps time stamp
+      gps_track: Gps track
+      gps_track_ref: Gps track ref
+      gps_version_id: Gps version
+      gray_response_curve: Gray response curve
+      gray_response_unit: Gray response unit
+      halftone_hints: Halftone hints
+      host_computer: Host computer
+      image_description: Image description
+      image_id: Image
+      image_layer: Image layer
+      image_length: Image length
+      image_unique_id: Image unique
+      image_width: Image width
+      indexed: Indexed
+      ink_names: Ink names
+      ink_set: Ink set
+      iptc: Iptc
+      iso_speed_ratings: Iso speed ratings
+      jpeg_ac_tables: Jpeg ac tables
+      jpeg_dc_tables: Jpeg dc tables
+      jpeg_interchange_format: Jpeg interchange format
+      jpeg_interchange_format_length: Jpeg interchange format length
+      jpeg_lossless_predictors: Jpeg lossless predictors
+      jpeg_point_transforms: Jpeg point transforms
+      jpeg_q_tables: Jpeg q tables
+      jpeg_restart_interval: Jpeg restart interval
+      jpeg_tables: Jpeg tables
+      jpegproc: Jpegproc
+      light_source: Light source
+      make: Make
+      maker_note: Maker note
+      max_aperture_value: Max aperture value
+      max_sample_value: Max sample value
+      metering_mode: Metering mode
+      min_sample_value: Min sample value
+      mode_number: Mode number
+      model: Model
+      new_subfile_type: New subfile type
+      number_of_inks: Number of inks
+      oecf: Oecf
+      opi_proxy: Opi proxy
+      orientation: Orientation
+      page_name: Page name
+      photometric_interpretation: Photometric interpretation
+      pixel_x_dimension: Pixel x dimension
+      pixel_y_dimension: Pixel y dimension
+      planar_configuration: Planar configuration
+      predictor: Predictor
+      primary_chromaticities: Primary chromaticities
+      profile_type: Profile type
+      reference_black_white: Reference black white
+      related_sound_file: Related sound file
+      resolution_unit: Resolution unit
+      rows_per_strip: Rows per strip
+      samples_per_pixel: Samples per pixel
+      saturation: Saturation
+      scene_capture_type: Scene capture type
+      scene_type: Scene type
+      sensing_method: Sensing method
+      sharpness: Sharpness
+      shutter_speed_value: Shutter speed value
+      software: Software
+      spatial_frequency_response: Spatial frequency response
+      spectral_sensitivity: Spectral sensitivity
+      strip_byte_counts: Strip byte counts
+      strip_offsets: Strip offsets
+      strip_row_counts: Strip row counts
+      sub_ifds: Sub ifds
+      subfile_type: Subfile type
+      subject_area: Subject area
+      subject_distance: Subject distance
+      subject_distance_range: Subject distance range
+      subject_location: Subject location
+      subsec_time: Subsec time
+      subsec_time_digitized: Subsec time digitized
+      subsec_time_orginal: Subsec time orginal
+      t4_options: T4 options
+      t6_options: T6 options
+      target_printer: Target printer
+      threshholding: Threshholding
+      tile_byte_counts: Tile byte counts
+      tile_length: Tile length
+      tile_offsets: Tile offsets
+      tile_width: Tile width
+      transfer_function: Transfer function
+      transfer_range: Transfer range
+      user_comment: User comment
+      version_year: Version year
+      white_balance: White balance
+      white_point: White point
+      x_clip_path_units: X clip path units
+      x_position: X position
+      x_resolution: X resolution
+      xmp: Xmp
+      y_clip_path_units: Y clip path units
+      y_position: Y position
+      y_resolution: Y resolution
+      ycb_cr_coefficients: Ycb cr coefficients
+      ycb_cr_positioning: Ycb cr positioning
+      ycb_cr_sub_sampling: Ycb cr sub sampling

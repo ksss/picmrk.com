@@ -1,0 +1,8 @@
+= form_tag stream_path(@stream.key), method: :patch, class: 'form-horizontal' do
+  .form-group
+    = label :stream, :title, class: 'col-sm-2 control-label'
+    .col-sm-2
+      = text_field :stream, :title, class: 'form-control'
+  .form-group
+    .col-sm-offset-2.col-sm-4
+      button.btn.btn-primary Save

@@ -1,0 +1,15 @@
+h1
+  | Signup
+
+p.help-block
+  | あなたのアカウントを作ります。
+p.help-block
+  | ニックネームを入力してください。
+
+= form_for @account, url: account_path, html: {class: 'form-inline'} do |f|
+  = hidden_field_tag :token, @token
+  = f.hidden_field :email
+  .form-group
+    = f.text_field :name, class: 'form-control', placeholder: "name"
+  button.btn.btn-primary type="submit"
+    | Create

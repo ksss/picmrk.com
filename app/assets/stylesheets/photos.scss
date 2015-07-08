@@ -1,0 +1,27 @@
+.photo_streams {
+  div {
+    display: inline;
+  }
+  form {
+    display: inline;
+  }
+}
+
+.photos {
+  .photo {
+    margin: 0;
+    padding: 0;
+    .photo-anchor {
+      margin: 0;
+      padding: 0;
+    }
+    .photo-img {
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
+
+.full_photo {
+  width: 100%;
+}

@@ -1,0 +1,19 @@
+h1.col-md-offset-1
+  | Password
+
+= form_tag update_password_path, method: :patch, class: 'form-horizontal' do
+  .form-group
+    = label_tag :current_password, 'Current password', class: 'col-sm-3 control-label'
+    .col-sm-3
+      = password_field_tag :current_password, '', class: 'form-control', required: true
+  .form-group
+    = label_tag :new_password, 'New password', class: 'col-sm-3 control-label'
+    .col-sm-3
+      = password_field_tag :new_password, '', class: 'form-control', required: true
+  .form-group
+    = label_tag :verify_password, 'Verify password', class: 'col-sm-3 control-label'
+    .col-sm-3
+      = password_field_tag :verify_password, '', class: 'form-control', required: true
+  .form-group
+    .col-sm-offset-3.col-sm-4
+      button.btn.btn-primary Update

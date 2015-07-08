@@ -1,0 +1,11 @@
+h1 Sign in
+
+= form_tag sessions_path, method: :post do
+  .field
+    = label_tag :name, "name or email"
+    = text_field_tag 'session[name]'
+  .field
+    = label_tag :password
+    = password_field_tag 'session[password]'
+  .actions
+    = submit_tag 'Sign In'
