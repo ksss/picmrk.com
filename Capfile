@@ -26,7 +26,7 @@ Dir.glob('lib/capistrano/tasks/*.rake').each { |r| import r }
 
 require 'aws-sdk'
 
-Aws.config[:profile] = "picmrk"
+Aws.config[:profile] = "picmrk.com"
 Aws.config[:region] = ENV["AWS_REGION"]
 
 class DescribeInstances

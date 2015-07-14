@@ -3,7 +3,7 @@ set :rbenv_ruby, '2.3.0-dev'
 set :unicorn_rack_env, "production"
 
 hosts = fetch(:hosts).select{ |h|
-  h.name == 'picmrk.com-prd'
+  h.name == 'picmrk_com'
 }
 
 ips = hosts.map(&:public_ip_address)
