@@ -40,7 +40,13 @@ module ApplicationHelper
       src = "localhost:3000/tori/#{tori_file.name}"
       "#{Rails.application.config.kanoko_host}#{Kanoko.path_for(*args, src)}"
     when Tori::Backend::S3
-      src = tori_file.public_url.to_s.sub(%r{https?://}, '')
+      signer = Aws::S3::Presigner.new
+      src = signer.presigned_url(
+        :get_object,
+        bucket: Tori.config.backend.bucket,
+        key: tori_file.name
+      ).to_s.sub(%r{https?://}, '')
+#      src = tori_file.public_url.to_s.sub(%r{https?://}, '')
       "#{Rails.application.config.kanoko_host}#{Kanoko.path_for(*args, src)}"
     end
   end
