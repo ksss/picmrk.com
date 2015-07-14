@@ -43,4 +43,5 @@ end
 
 after_fork do |server, worker|
   ActiveRecord::Base.establish_connection
+  GC.disable
 end
