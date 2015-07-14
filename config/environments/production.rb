@@ -81,8 +81,6 @@ Rails.application.configure do
 
   config.kanoko_host = "http://img.picmrk.com"
 
-  config.middleware.use Unicorn::WorkerKiller::Oom, 400 * 1024**2, 500 * 1024**2
-
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.smtp_settings = {
