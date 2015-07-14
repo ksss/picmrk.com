@@ -27,6 +27,7 @@ gem "twitter-bootstrap-rails"
 gem 'therubyracer'
 gem 'uglifier'
 gem 'unicorn'
+gem 'unicorn-worker-killer', require: 'unicorn/worker_killer'
 
 group :development do
   gem 'better_errors'
