@@ -77,7 +77,7 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  config.tori_aws_s3_bucket = 'picmrk-prd'
+  config.tori_aws_s3_bucket = 'picmrk.com'
 
   config.kanoko_host = "http://img.picmrk.com"
 
