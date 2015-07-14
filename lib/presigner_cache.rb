@@ -2,11 +2,10 @@ class PresignerCache
   class << self
     def url(method, params = {})
       @map ||= {}
-      @map[[method, params]] = presigner_cache = new(method, params)
-      if presigner_cache.expires_in?
-        presigner_cache.url
+      if @map[[method, params]] && @map[[method, params]].expires_in?
+        @map[[method, params]].url
       else
-        @map.delete([method, params])
+        @map[[method, params]] = new(method, params)
         url(method, params)
       end
     end
