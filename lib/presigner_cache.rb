@@ -11,8 +11,6 @@ class PresignerCache
   end
 
   def initialize(method, params = {})
-    @method = method
-    @params = params
     expires_in = params.delete(:expires_in) || Aws::S3::Presigner::FIFTEEN_MINUTES
     @expires_time = Time.now.utc + expires_in
     @presigned_url = new_url(method, params)
@@ -25,6 +23,8 @@ class PresignerCache
   def url
     @presigned_url
   end
+
+  private
 
   def new_url(method, params = {})
     signer = Aws::S3::Presigner.new
