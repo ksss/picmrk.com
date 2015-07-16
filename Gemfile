@@ -2,9 +2,10 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails'
-gem 'aws-sdk'
+
 gem 'active_decorator'
 gem 'activerecord-session_store'
+gem 'aws-sdk'
 gem 'bcrypt'
 gem 'coffee-rails'
 gem 'exifr'
@@ -21,10 +22,10 @@ gem 'rack-health'
 gem 'sass-rails'
 gem 'slim-rails'
 gem 'terminal-notifier'
-gem 'turbolinks'
-gem 'tori', require: ['tori/rails', 'tori/backend/s3']
-gem "twitter-bootstrap-rails"
 gem 'therubyracer'
+gem 'tori', require: ['tori/rails', 'tori/backend/s3']
+gem 'turbolinks'
+gem "twitter-bootstrap-rails"
 gem 'uglifier'
 gem 'unicorn'
 gem 'unicorn-worker-killer', require: 'unicorn/worker_killer'
