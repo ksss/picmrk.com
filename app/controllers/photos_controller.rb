@@ -55,7 +55,10 @@ class PhotosController < ApplicationController
             c << normalized_file.path
           end
 
-          Photo.create!(account: current_account, image: normalized_file, private_image: tempfile) { |photo|
+          Photo.new.tap { |photo|
+            photo.account = current_account
+            photo.image = normalized_file
+            photo.private_image = tempfile
             photo.original_header = imagine.header
             photo.filename = uploader.original_filename
             photo.size = tempfile.size
@@ -64,8 +67,9 @@ class PhotosController < ApplicationController
             photo.stream_ids = stream_ids
             photo.key = Base58.key_digest58
             photo.private_name = Base58.key_digest58(32)
-            photo.image.write if photo.image.from?
+            photo.image.write(acl: 'private') if photo.image.from?
             photo.private_image.write(acl: 'private') if photo.private_image.from?
+            photo.save!
           }
         ensure
           normalized_file.unlink
