@@ -2,12 +2,11 @@ class PresignerCache
   class << self
     def url(method, params = {})
       @map ||= {}
-      if @map[[method, params]] && @map[[method, params]].expires_in?
-        @map[[method, params]].url
-      else
-        @map[[method, params]] = new(method, params)
-        url(method, params)
+      key = "#{method}-#{params[:bucket]}-#{params[:key]}"
+      if !(@map[key] && @map[key].expires_in?)
+        @map[key] = new(method, params)
       end
+      @map[key].url
     end
   end
 
