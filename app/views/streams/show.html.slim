@@ -3,18 +3,19 @@ ruby:
     @current_account_stream && @current_account_stream.owner?
   end
 
-h3.text-inline
-  = @stream.title
+#contents
+  h3.text-inline
+    = @stream.title
 
-.icons
-  - @stream.accounts.each do |account|
-    = icon_thumb(account)
+  .icons
+    - @stream.accounts.each do |account|
+      = icon_thumb(account)
 
-= form_tag invite_stream_path(@stream.key), class: 'test-new-stream form-inline' do
-  .form-group
-    = text_field_tag 'account[name]', nil, placeholder: 'invite account name', class: 'form-control test-title'
-    button.btn.btn-default.test-button
-      == "#{fa(:plus)} さそう"
+  = form_tag invite_stream_path(@stream.key), class: 'test-new-stream form-inline' do
+    .form-group
+      = text_field_tag 'account[name]', nil, placeholder: 'invite account name', class: 'form-control test-title'
+      button.btn.btn-default.test-button
+        == "#{fa(:plus)} さそう"
 
 .clearfix
 
@@ -24,14 +25,15 @@ h3.text-inline
 
 .clearfix
 
-= paginate @photos
+#contents
+  = paginate @photos
 
-.buttons
-  - if @current_account_stream
-    = button_to 'Leave', account_stream_path(@stream.key, current_account.name), method: :delete, class: 'btn btn-warning btn-block', data: {confirm: 'Leave stream?'}
-  - elsif current_account
-    = button_to 'Join', account_stream_path(@stream.key, current_account.name), method: :post, class: 'btn btn-primary btn-block'
+  .buttons
+    - if @current_account_stream
+      = button_to 'Leave', account_stream_path(@stream.key, current_account.name), method: :delete, class: 'btn btn-warning btn-block', data: {confirm: 'Leave stream?'}
+    - elsif current_account
+      = button_to 'Join', account_stream_path(@stream.key, current_account.name), method: :post, class: 'btn btn-primary btn-block'
 
-  - if owner?
-    = link_to 'Edit', edit_stream_path(@stream.key), class: 'btn btn-info btn-block'
-    = button_to 'Delete', stream_path(@stream.key), method: :delete, class: 'btn btn-danger btn-block', data: {confirm: 'Delete stream?'}
+    - if owner?
+      = link_to 'Edit', edit_stream_path(@stream.key), class: 'btn btn-info btn-block'
+      = button_to 'Delete', stream_path(@stream.key), method: :delete, class: 'btn btn-danger btn-block', data: {confirm: 'Delete stream?'}
