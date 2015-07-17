@@ -19,11 +19,12 @@ class PhotosController < ApplicationController
   end
 
   def destroy
+    path = params[:stream_key].present? ? stream_path(params[:stream_key]) : streams_path
     if current_account_photo?
       if @photo.destroy
-        redirect_to root_path, notice: 'destroy photo' and return
+        redirect_to path, notice: 'destroy photo' and return
       else
-        redirect_to root_path, alert: 'destroy photo failed' and return
+        redirect_to path, alert: 'destroy photo failed' and return
       end
     else
       redirect_to :back, alert: 'unauthorized' and return

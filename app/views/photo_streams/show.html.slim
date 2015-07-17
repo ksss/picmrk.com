@@ -16,4 +16,6 @@
           == render 'photos/stream', photo: @photo, stream: stream
   pre= @photo.meta_tag
   = link_to 'Original download', download_photo_path(@photo.key), class: 'btn btn-success btn-lg btn-block'
-  = button_to 'Delete this photo', photo_path(@photo.key), class: 'btn btn-danger btn-lg btn-block', method: :delete, data: {confirm: 'delete photo?'}
+  = form_tag photo_path(@photo.key), method: :delete
+    = hidden_field_tag :stream_key, @stream.key
+    = submit_tag 'Delete this photo', class: 'btn btn-danger btn-lg btn-block', data: {confirm: 'delete photo?'}
