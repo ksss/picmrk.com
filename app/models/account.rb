@@ -1,7 +1,7 @@
 class Account < ActiveRecord::Base
   SYSTEM_NAMES = %w(assets auth accounts sessions sign password photos streams)
 
-  has_many :photos
+  has_many :photos, dependent: :destroy
   has_many :account_streams, dependent: :destroy
   has_many :streams, through: :account_streams
 
