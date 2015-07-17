@@ -19,8 +19,12 @@ h3.text-inline
 .clearfix
 
 .photos
-  - @stream.photos.order(shot_at: :desc).each do |photo|
+  - @photos.each do |photo|
     = render partial: 'photos/photo_stream', locals: {stream: @stream, photo: photo}
+
+.clearfix
+
+= paginate @photos
 
 .buttons
   - if @current_account_stream

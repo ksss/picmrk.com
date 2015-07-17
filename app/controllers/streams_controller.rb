@@ -39,6 +39,7 @@ class StreamsController < ApplicationController
   end
 
   def show
+    @photos = @stream.photos.order(shot_at: :desc).page(params[:page]).per(30)
   end
 
   def edit
