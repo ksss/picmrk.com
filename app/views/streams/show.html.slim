@@ -3,7 +3,7 @@ ruby:
     @current_account_stream && @current_account_stream.owner?
   end
 
-#contents
+.contents
   h3.text-inline
     = @stream.title
 
@@ -25,8 +25,9 @@ ruby:
 
 .clearfix
 
-#contents
-  = paginate @photos
+.contents
+  .pagination-wrap
+    = paginate @photos
 
   .buttons
     - if @current_account_stream

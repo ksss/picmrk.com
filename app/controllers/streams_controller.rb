@@ -1,4 +1,5 @@
 class StreamsController < ApplicationController
+  PAGE_PER = 3 * 13
   SINGULAR_METHODS = %i(show edit update destroy).freeze
 
   before_action :set_stream, only: SINGULAR_METHODS + %i(invite)
@@ -39,7 +40,7 @@ class StreamsController < ApplicationController
   end
 
   def show
-    @photos = @stream.photos.order(shot_at: :desc).page(params[:page]).per(30)
+    @photos = @stream.photos.order(shot_at: :desc).page(params[:page]).per(PAGE_PER)
   end
 
   def edit
