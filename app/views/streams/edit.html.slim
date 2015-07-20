@@ -1,8 +1,48 @@
-= form_tag stream_path(@stream.key), method: :patch, class: 'form-horizontal' do
-  .form-group
-    = label :stream, :title, class: 'col-sm-2 control-label'
-    .col-sm-2
-      = text_field :stream, :title, class: 'form-control'
-  .form-group
-    .col-sm-offset-2.col-sm-4
+.contents
+  = form_tag stream_path(@stream.key), method: :patch, class: 'form-horizontal' do
+    .form-group
+      = label :stream, :stream_title, class: 'col-sm-2 control-label'
+      .col-sm-10
+        = text_field :stream, :title, class: 'form-control'
+    .form-group
+      .col-sm-offset-2.col-sm-4
+        button.btn.btn-primary Save
+
+  - @stream.account_streams.each do |account_stream|
+    hr
+    = form_for account_stream, url: account_stream_path(account_stream.stream.key, account_stream.account.name), method: :patch, html: {class: 'form-horizontal'} do |f|
+      h3
+        = icon(account_stream.account, version: :thumb, class: 'thumb-mini')
+        = account_stream.account.name
+      .form-group
+        = f.label :status, class: 'col-sm-2 control-label'
+        .col-sm-10
+          = f.select :status, [['viewer', 'viewer'], ['owner', 'owner']], class: 'form-control'
       button.btn.btn-primary Save
+
+  hr
+  .help-block
+    h3
+      | Help:
+    h4
+      | owner
+    ul
+      li
+        | Streamをみることができます
+      li
+        | Streamをぬけることができます
+      li
+        | Streamを削除することができます
+      li
+        | 他のアカウントをStreamにさそうことができます
+      li 
+        | 他のユーザーのステータスを変更することができます
+      li
+        | Streamの名前を変更することができます
+    h4
+      | viewer
+    ul
+      li
+        | Streamをみることができます
+      li
+        | Streamをぬけることができます

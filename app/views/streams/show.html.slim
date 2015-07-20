@@ -11,11 +11,12 @@ ruby:
     - @stream.accounts.each do |account|
       = icon_thumb(account)
 
-  = form_tag invite_stream_path(@stream.key), class: 'test-new-stream form-inline' do
-    .form-group
-      = text_field_tag 'account[name]', nil, placeholder: 'invite account name', class: 'form-control test-title'
-      button.btn.btn-default.test-button
-        == "#{fa(:plus)} さそう"
+  - if @current_account_stream.owner?
+    = form_tag accounts_stream_path(@stream.key), class: 'test-new-stream form-inline', method: :post do
+      .form-group
+        = text_field_tag 'account[name]', nil, placeholder: 'invite account name', class: 'form-control test-title'
+        button.btn.btn-default.test-button
+          == "#{fa(:plus)} さそう"
 
 .clearfix
 

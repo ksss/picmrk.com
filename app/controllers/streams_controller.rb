@@ -25,20 +25,6 @@ class StreamsController < ApplicationController
     end
   end
 
-  def invite
-    account = Account.find_by name: account_params[:name]
-    unless account
-      redirect_to stream_path @stream.key, alert: "#{account_params[:name]} account not found" and return
-    end
-
-    account.account_streams.create stream: @stream, status: 'viewer'
-    if account.save && @stream.write_log("invite from @#{current_account.name} to @#{account.name}")
-      redirect_to stream_path @stream.key, notice: 'invited'
-    else
-      redirect_to stream_path @stream.key, alert: 'invite failed'
-    end
-  end
-
   def show
     @photos = @stream.photos.order(shot_at: :desc).page(params[:page]).per(PAGE_PER)
   end

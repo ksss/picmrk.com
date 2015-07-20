@@ -28,5 +28,7 @@ Rails.application.routes.draw do
   post '/streams/:stream_key/photos/:photo_key' => 'photo_streams#create'
   delete '/streams/:stream_key/photos/:photo_key' => 'photo_streams#destroy'
 
-  delete '/streams/:stream_key/accounts/:account_name' => 'account_streams#destroy', as: :account_stream
+  post '/streams/:stream_key/accounts/' => 'account_streams#create', as: :accounts_stream
+  patch '/streams/:stream_key/accounts/:account_name' => 'account_streams#update', as: :account_stream
+  delete '/streams/:stream_key/accounts/:account_name' => 'account_streams#destroy'
 end
