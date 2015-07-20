@@ -1,11 +1,11 @@
 #photo
   .photo_stream-link
-    - prev_photo = @photo_stream.prev_photo
-    - if prev_photo
-      = link_to '', photo_stream_path(@stream.key, prev_photo.key), class: 'photo_stream-link-prev'
     - next_photo = @photo_stream.next_photo
     - if next_photo
       = link_to '', photo_stream_path(@stream.key, next_photo.key), class: 'photo_stream-link-next'
+    - prev_photo = @photo_stream.prev_photo
+    - if prev_photo
+      = link_to '', photo_stream_path(@stream.key, prev_photo.key), class: 'photo_stream-link-prev'
   = image_tag proxy_url(@photo.image, :resize, "1000x1000"), class: "full_photo"
 
 - if @photo.owner?

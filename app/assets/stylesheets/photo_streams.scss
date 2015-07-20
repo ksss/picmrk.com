@@ -1,7 +1,7 @@
 #photo {
   position: relative;
   .photo_stream-link {
-    .photo_stream-link-prev {
+    .photo_stream-link-next {
       margin: 0;
       padding: 0;
       position: absolute;
@@ -9,7 +9,7 @@
       height: 100%;
       display: block;
     }
-    .photo_stream-link-next {
+    .photo_stream-link-prev {
       margin: 0;
       padding: 0;
       margin-left: 50%;
