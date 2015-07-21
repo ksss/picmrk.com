@@ -1,16 +1,17 @@
-h1 Picmrk
+.contents
+  h1 Picmrk
 
-p
-  | 忘れたくない日々を写真でBookmarkしよう
+  p
+    | 忘れたくない日々を写真でBookmarkしよう
 
-h3 signin
+  h3 signin
 
-= form_tag send_email_sign_path, class: 'form-inline' do
-  .form-group
-    = email_field_tag 'sign[email]', nil, class: 'form-control', id: 'email', placeholder: "your@email.address"
-  button.btn.btn-primary 送信
+  = form_tag send_email_sign_path, class: 'form-inline' do
+    .form-group
+      = email_field_tag 'sign[email]', nil, class: 'form-control', id: 'email', placeholder: "your@email.address"
+    button.btn.btn-primary 送信
 
-p.help-block
-  | あなたのEmailアドレスにワンタイムサインイン用URLを送信します。
-p.help-block
-  | このURLは15分間だけ有効です。
+  p.help-block
+    | あなたのEmailアドレスにワンタイムサインイン用URLを送信します。
+  p.help-block
+    | このURLは15分間だけ有効です。

@@ -1,16 +1,17 @@
-- if @new_stream
-  = form_for @new_stream, html:{class: 'test-new-stream form-inline'} do |f|
-    .form-group
-      = f.label :title, class: 'sr-only'
-      = f.text_field :title, placeholder: 'Stream title', class: 'form-control test-title'
-      button.btn.btn-default.test-button
-        == "#{fa(:plus)} new stream"
+.contents
+  - if @new_stream
+    = form_for @new_stream, html:{class: 'test-new-stream form-inline'} do |f|
+      .form-group
+        = f.label :title, class: 'sr-only'
+        = f.text_field :title, placeholder: 'Stream title', class: 'form-control test-title'
+        button.btn.btn-default.test-button
+          == "#{fa(:plus)} new stream"
 
-ul#streams
-  - @streams.each do |stream|
-    li
-      = link_to stream_path(stream.key), class: 'btn btn-default btn-lg btn-block' do
-        h4.text-left
-          == inline_icon(@account)
-          | &nbsp;
-          = stream.title
+  ul#streams
+    - @streams.each do |stream|
+      li
+        = link_to stream_path(stream.key), class: 'btn btn-default btn-lg btn-block' do
+          h4.text-left
+            == inline_icon(@account)
+            | &nbsp;
+            = stream.title
