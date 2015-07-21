@@ -1,7 +1,10 @@
 class PhotoStreamsController < ApplicationController
-  skip_before_action :authenticate, only: %i(show)
+  SINGULAR_METHODS = %i(show edit update destroy).freeze
+
   before_action :set_photo
   before_action :set_stream
+  before_action :set_current_account_stream, only: SINGULAR_METHODS
+  before_action :filter_account_stream_member, only: SINGULAR_METHODS
 
   def show
     @photo_stream = PhotoStream.find_by(stream: @stream, photo: @photo)
@@ -43,5 +46,15 @@ class PhotoStreamsController < ApplicationController
 
     def set_stream
       @stream = Stream.find_by key: params[:stream_key]
+    end
+
+    def set_current_account_stream
+      @current_account_stream = AccountStream.find_by(account: current_account, stream: @stream)
+    end
+
+    def filter_account_stream_member
+      unless @current_account_stream
+        redirect_to root_path, alert: 'unauthorized' and return
+      end
     end
 end
