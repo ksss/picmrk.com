@@ -8,6 +8,9 @@
       = link_to '', photo_stream_path(@stream.key, prev_photo.key), class: 'photo_stream-link-prev'
   = image_tag proxy_url(@photo.image, :resize, "1000x1000"), class: "full_photo"
 
+.shot_at
+  = @photo.shot_at
+
 - if @photo.owner?
   .photo_streams
     - if current_account
