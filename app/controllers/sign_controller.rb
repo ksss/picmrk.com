@@ -2,6 +2,9 @@ class SignController < ApplicationController
   skip_before_action :authenticate, only: %i(send_email in up)
 
   def send_email
+    unless sign_params[:email].present?
+      redirect_to root_path, alert: 'emailアドレスを入力してください' and return
+    end
     fork { SignMailer.signin(to: sign_params[:email]).deliver_now }
     message = "#{sign_params[:email]} 宛にサインインの案内を送りました。"
     redirect_to root_path, notice: message and return
