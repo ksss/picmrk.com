@@ -16,6 +16,7 @@ gem 'kaminari'
 gem 'kanoko'
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem "mini_magick"
+gem 'newrelic_rpm'
 gem 'omniauth-twitter'
 gem 'pg'
 gem 'rack-health'
