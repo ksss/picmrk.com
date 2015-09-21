@@ -1,5 +1,5 @@
 class StreamsController < ApplicationController
-  PAGE_PER = 3 * 13
+  PAGE_PER = 3 * 9
   SINGULAR_METHODS = %i(show edit update destroy).freeze
 
   before_action :set_stream, only: SINGULAR_METHODS + %i(invite)
