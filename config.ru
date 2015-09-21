@@ -5,6 +5,6 @@ require ::File.expand_path('../config/environment',  __FILE__)
 #                            old_secret: ENV['OLD_COOKIE_SECRET']
 
 use Unicorn::WorkerKiller::MaxRequests, 256, 512
-use Unicorn::WorkerKiller::Oom, 160 * 1024**2, 200 * 1024**2
+use Unicorn::WorkerKiller::Oom, 200 * 1024**2, 250 * 1024**2
 use Rack::Health
 run Rails.application
