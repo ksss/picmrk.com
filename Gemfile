@@ -40,6 +40,7 @@ group :development do
   gem 'capistrano-rails'
   gem 'capistrano-rbenv'
   gem 'capistrano3-unicorn'
+  gem 'capistrano-foreman'
   gem 'spring'
   gem 'unicorn-rails'
 end
