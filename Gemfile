@@ -19,6 +19,7 @@ gem 'kanoko'
 gem 'newrelic_rpm'
 gem 'omniauth-twitter'
 gem 'pg'
+gem 'puma'
 gem 'rack-health'
 gem 'sass-rails'
 gem 'slim-rails'
@@ -27,8 +28,8 @@ gem 'therubyracer'
 gem 'tori', require: ['tori/rails', 'tori/backend/s3']
 gem 'turbolinks'
 gem 'uglifier'
-gem 'unicorn'
-gem 'unicorn-worker-killer', require: ['unicorn', 'unicorn/worker_killer']
+# gem 'unicorn'
+# gem 'unicorn-worker-killer', require: ['unicorn', 'unicorn/worker_killer']
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem "mini_magick"
 gem "twitter-bootstrap-rails"
