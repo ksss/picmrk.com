@@ -1,1 +1,1 @@
-app: bundle ex rails server
+web: bundle ex rails server
