@@ -95,4 +95,5 @@ Rails.application.configure do
   config.action_mailer.default_url_options = {
     host: "picmrk.com"
   }
+  config.secret_key_base = ENV["SECRET_KEY_BASE"]
 end
