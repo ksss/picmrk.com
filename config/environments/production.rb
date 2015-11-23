@@ -91,8 +91,8 @@ Rails.application.configure do
     port: '587',
     domain: 'smtp.gmail.com',
     authentication: 'plain',
-    user_name: Rails.application.secrets.gmail_user_name,
-    password: Rails.application.secrets.gmail_password
+    user_name: ENV["GMAIL_USER_NAME"] || Rails.application.secrets.gmail_user_name,
+    password: ENV["GMAIL_PASSWORD"] || Rails.application.secrets.gmail_password
   }
   config.action_mailer.default_url_options = {
     host: "picmrk.com"
