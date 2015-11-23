@@ -97,4 +97,5 @@ Rails.application.configure do
   config.action_mailer.default_url_options = {
     host: "picmrk.com"
   }
+  Tori.config.backend = Tori::Backend::S3.new(bucket: Rails.application.config.tori_aws_s3_bucket)
 end

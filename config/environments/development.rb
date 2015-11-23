@@ -57,4 +57,5 @@ Rails.application.configure do
   config.action_mailer.default_url_options = {
     host: "localhost:3000"
   }
+  Tori.config.backend = Tori::Backend::FileSystem.new(Rails.root.join("public/tori"))
 end
